@@ -1,85 +1,83 @@
-===================================
-基于 Emacs 制作面向研究生的编辑工具
-===================================
+==============================================
+Create Editing Tool For Researchers with Emacs
+==============================================
 
-简介
-====
+Introduction
+============
 
-本文引入 Emacs (一款文本编辑器), 以及实现下述文本所提及功能的简要概略.
+This page introduces Emacs (a text editor),
+and a brief overview of the implementation of the features mentioned in the following text.
 
-基本功能
-========
+Core Features
+=============
 
--  高效的文本编辑, 这其中包括了基于 LaTeX 数学式的高效录入.
--  完备的预览系统: 你能够随时预览基于纯文本所编写而编译生成的内容.
--  数据库存储: 你的笔记内容都被存储在 SQLite 中,
-   这使你能够快速检索笔记中的内容.
--  卡片盒 (ZettelKasten) 系统: 你所记录的知识点互相连接,
-   使你能够审视知识间的关系.
--  基于 Emacs 实现自定义函数: 你能够高度自定义自己的工作区,
-   并添加自己希望的功能.
+- Efficient text editing, which includes mathematically efficient entry based on LaTeX.
+- Complete preview system: you can always preview the compiled content written in plain text.
+- Database storage: The contents of your notes are stored in SQLite, This allows you to quickly retrieve the content of your notes.
+- Cardbox (ZettelKasten) system: Your recorded knowledge is connected to each other, allows you to examine the relationships between knowledge.
+- Emacs-based implementation of custom functions: You can highly customize your workspace, and add the functions you want.
 
-面向研究生
-==========
+For Researchers
+===============
 
-所有文本基于 `Org-mode <https://orgmode.org>`__ 所提供的格式,
-它包含了一种文本标记语言, 使你能够在文件中写入富文本. 在学术论文排版中,
-LaTeX 是十分规范化的工具之一. 但是掌握 LaTeX 并不容易, 它的
-基本规则十分复杂, 并且在编写 LaTeX 文件的过程中, 你只能看到源代码.
-若要预览当前 文档, 你必须要使用 pdfTeX 或 XeTeX 这些引擎编译整个文档 ——
-而整个过程是十分耗时的.
+All text is based on the format provided by `Org-mode <https://orgmode.org>`__,
+It contains a text markup language that allows you to write rich text in the file. In the case of academic paper typesetting,
+LaTeX is one of the most standardized tools for typesetting academic papers. But it is not easy to master LaTeX, its
+Its basic rules are complex, and you can see only the source code while writing LaTeX files.
+To preview the current document, you have to compile the entire document using the engines pdfTeX or XeTeX - and the whole process is time-consuming.
+and the whole process is very time-consuming.
 
-现在我要告诉你一个很好的事情: 在 Emacs 中, 我们完全可以碎片化的预览
-LaTeX 内容, 并且在源代码中就能获取十分完善的排版 —— 这表示你完全可以使用
-Emacs 作为你笔记内容 的前端. 事实上, Emacs 与 LaTeX 是高度兼容的,
-这或许和一些历史有关: LaTeX 的前 身 TeX 排版系统由 Donald E. Knuth
-编写完成, 而 Knuth 曾表示自己最爱的软件为 Emacs.
+Now I'll tell you a very good thing: in Emacs, we can preview the
+LaTeX content in pieces, and get a very good layout right in the source code -- which means you can use
+Emacs as a front-end for your notes. In fact, Emacs is highly compatible with LaTeX,
+This may have something to do with its history: LaTeX's predecessor, the TeX typesetting system, was written by Donald E. Knuth
+LaTeX's predecessor, TeX, was written by Donald E. Knuth, who once said that his favorite software was Emacs.
 
-在 Emacs 中已经由相当成熟的为论文写作准备的工具. 比如 AUCTeX,
-它提供了格式化和预览 LaTeX 数学式的功能. CDLaTeX 则提供了一系列用于简化
-LaTeX 录入的函数与模版. 而在 Org-mode 中, ``ox-latex.el`` 包提供了使
-``.org`` 文件导出为 LaTeX 文件的功能.
+In Emacs there are already quite sophisticated tools for writing papers. For example, AUCTeX,
+which provides the ability to format and preview LaTeX mathematically. CDLaTeX, on the other hand, provides a series of functions for simplifying
+CDLaTeX provides a series of functions and templates to simplify LaTeX entry. In Org-mode, the ``ox-latex.el`` package provides functions for making
+``.org`` files to LaTeX files.
 
-展示
-====
+Demo Picture
+============
 
 .. image:: ./img/124CD627-A401-4A6D-B65D-2E78484EC173.png
 
-使用方案
-========
+Preliminary Usage
+=================
 
-下载与安装
-----------
+Installation
+------------
 
-先决条件
-~~~~~~~~
+Prerequisites
+~~~~~~~~~~~~~
 
--  Emacs 29 (当前需要自己编译).
--  ripgrep (rg).
--  LaTeX 相应发行版本.
--  Onfi 字体 (非必需): 在
-   `ilyaw39/Onfi <https://github.com/ilyaw39/Onfi>`__ 下载并安装它.
+-  Emacs 29 (You may compile from source).
+-  ripgrep (rg) executable in ``PATH``.
+-  LaTeX executable in ``PATH``.
+-  PumpinJunkies Font (optional): Download it at
+   `ilyaw39/PumpinJunkies <https://github.com/ilyaw39/PumpinJunkies>`__ then install it.
 
-使用 Emacs 配置
-~~~~~~~~~~~~~~~
+Using the Emacs Config
+~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: shell
+``git clone https://github.com/ilyaw39/.emacs.d.git``
 
-   git clone https://github.com/ilyaw39/.emacs.d.git
+Users' Manual
+-------------
 
-用户文档
---------
+Once the Emacs configuration has been initialized, you will see today's daily note provided by `Org Roam <https://github.com/org-roam/org-roam>`__.
+This design mechanism is inspired by `Roam Research <https://roamresearch.com>`__.
 
-当 Emacs 初始化完毕后, 当天的日记便是程序的入口. 这个设计机制与 `Roam
-Research <https://roamresearch.com>`__ 是一样的. 如果你好奇为何要这样做,
-请查询关于 Roam Research 的文章. 下面是常用的快捷键:
+Cheat Sheet
+-----------
 
-=========== =============================== ==================
-按键        函数使用                        简介
-=========== =============================== ==================
-``C-c n j`` ``org-roam-dailies-goto-today`` 进入当天的日记
-``C-c n i`` ``org-roam-node-insert``        嵌入笔记节点
-``C-c n f`` ``org-roam-node-find``          查找笔记节点
-``C-c n a`` ``org-roam-alias-add``          为当前笔记创建别名
-``C-c n l`` ``org-roam-buffer-toggle``      显示引用表
-=========== =============================== ==================
+=========== ===============================
+Key         Function Called                
+=========== ===============================
+``C-c n j`` ``org-roam-dailies-goto-today``
+``C-c n i`` ``org-roam-node-insert``       
+``C-c n f`` ``org-roam-node-find``         
+``C-c n a`` ``org-roam-alias-add``         
+``C-c n l`` ``org-roam-buffer-toggle``     
+=========== ===============================
