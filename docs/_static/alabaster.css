@@ -3,10 +3,10 @@
 /* -- page layout ----------------------------------------------------------- */
 
 body {
-    font-family: Georgia, serif;
+    font-family: Fira Sans;
     font-size: 17px;
-    background-color: #fff;
-    color: #000;
+    background-color: #000000;
+    color: #dddddd;
     margin: 0;
     padding: 0;
 }
@@ -33,12 +33,12 @@ div.sphinxsidebar {
 }
 
 hr {
-    border: 1px solid #B1B4B6;
+    border: 1px solid #dddddd;
 }
 
 div.body {
-    background-color: #fff;
-    color: #3E4349;
+    background-color: #000000;
+    color: #dddddd;
     padding: 0 30px 0 30px;
 }
 
@@ -59,18 +59,14 @@ div.footer a {
 }
 
 p.caption {
-    font-family: inherit;
+    font-family: Fira Sans;
     font-size: inherit;
 }
 
 
-div.relations {
-    display: none;
-}
-
 
 div.sphinxsidebar a {
-    color: #444;
+    color: #6ae4b9;
     text-decoration: none;
     border-bottom: 1px dotted #999;
 }
@@ -107,8 +103,8 @@ div.sphinxsidebarwrapper p.blurb {
 
 div.sphinxsidebar h3,
 div.sphinxsidebar h4 {
-    font-family: Georgia, serif;
-    color: #444;
+    font-family: Fira Sans Bold;
+    color: #f78fe7;
     font-size: 24px;
     font-weight: normal;
     margin: 0 0 5px 0;
@@ -120,7 +116,7 @@ div.sphinxsidebar h4 {
 }
 
 div.sphinxsidebar h3 a {
-    color: #444;
+    color: #6ae4b9;
 }
 
 div.sphinxsidebar p.logo a,
@@ -131,7 +127,7 @@ div.sphinxsidebar h3 a:hover {
 }
 
 div.sphinxsidebar p {
-    color: #555;
+    color: #dddddd;
     margin: 10px 0;
 }
 
@@ -151,7 +147,7 @@ div.sphinxsidebar ul li.toctree-l2 > a {
 
 div.sphinxsidebar input {
     border: 1px solid #CCC;
-    font-family: Georgia, serif;
+    font-family: Fira Sans;
     font-size: 1em;
 }
 
@@ -182,12 +178,12 @@ div.sphinxsidebar h3.donation {
 /* -- body styles ----------------------------------------------------------- */
 
 a {
-    color: #004B6B;
+    color: #6ae4b9;
     text-decoration: underline;
 }
 
 a:hover {
-    color: #6D4100;
+    color: #f78fe7;
     text-decoration: underline;
 }
 
@@ -197,7 +193,7 @@ div.body h3,
 div.body h4,
 div.body h5,
 div.body h6 {
-    font-family: Georgia, serif;
+    font-family: Fira Sans Bold;
     font-weight: normal;
     margin: 30px 0px 10px 0px;
     padding: 0;
@@ -238,7 +234,7 @@ div.admonition tt.xref, div.admonition code.xref, div.admonition a tt {
 }
 
 div.admonition p.admonition-title {
-    font-family: Georgia, serif;
+    font-family: Fira Sans Bold;
     font-weight: normal;
     font-size: 24px;
     margin: 0 0 10px 0;
@@ -251,7 +247,7 @@ div.admonition p.last {
 }
 
 div.highlight {
-    background-color: #fff;
+    background-color: #000000;
 }
 
 dt:target, .highlight {
@@ -327,12 +323,12 @@ p.admonition-title:after {
 }
 
 pre, tt, code {
-    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-family: Fira Code;
     font-size: 0.9em;
 }
 
 .hll {
-    background-color: #FFC;
+    background-color: #00c06f;
     margin: 0 -12px;
     padding: 0 12px;
     display: block;
@@ -350,16 +346,16 @@ tt.descname, code.descname {
 }
 
 img.screenshot {
-    -moz-box-shadow: 2px 2px 4px #EEE;
-    -webkit-box-shadow: 2px 2px 4px #EEE;
-    box-shadow: 2px 2px 4px #EEE;
+    -moz-box-shadow: 2px 2px 4px #000000;
+    -webkit-box-shadow: 2px 2px 4px #000000;
+    box-shadow: 2px 2px 4px #000000;
 }
 
 table.docutils {
     border: 1px solid #888;
-    -moz-box-shadow: 2px 2px 4px #EEE;
-    -webkit-box-shadow: 2px 2px 4px #EEE;
-    box-shadow: 2px 2px 4px #EEE;
+    -moz-box-shadow: 2px 2px 4px #000000;
+    -webkit-box-shadow: 2px 2px 4px #000000;
+    box-shadow: 2px 2px 4px #000000;
 }
 
 table.docutils td, table.docutils th {
@@ -455,8 +451,8 @@ dl pre, blockquote pre, li pre {
 }
 
 tt, code {
-    background-color: #ecf0f3;
-    color: #222;
+    background-color: #000000;
+    color: #00c06f;
     /* padding: 1px 2px; */
 }
 
@@ -467,7 +463,7 @@ tt.xref, code.xref, a tt {
 
 a.reference {
     text-decoration: none;
-    border-bottom: 1px dotted #004B6B;
+    border-bottom: 1px dotted #6ae4b9;
 }
 
 /* Don't put an underline on images */
@@ -476,22 +472,22 @@ a.image-reference, a.image-reference:hover {
 }
 
 a.reference:hover {
-    border-bottom: 1px solid #6D4100;
+    border-bottom: 1px solid #f78fe7;
 }
 
 a.footnote-reference {
     text-decoration: none;
     font-size: 0.7em;
     vertical-align: top;
-    border-bottom: 1px dotted #004B6B;
+    border-bottom: 1px dotted #6ae4b9;
 }
 
 a.footnote-reference:hover {
-    border-bottom: 1px solid #6D4100;
+    border-bottom: 1px solid #f78fe7;
 }
 
 a:hover tt, a:hover code {
-    background: #EEE;
+    background: #323232;
 }
 
 
@@ -564,14 +560,14 @@ a:hover tt, a:hover code {
 
     div.documentwrapper {
         float: none;
-        background: #fff;
+        background: #000000;
     }
 
     div.sphinxsidebar {
         display: block;
         float: none;
         width: 102.5%;
-        margin: 50px -30px -20px -30px;
+        margin: -20px -30px 20px -30px;
         padding: 10px 20px;
         background: #333;
         color: #FFF;
@@ -579,7 +575,7 @@ a:hover tt, a:hover code {
 
     div.sphinxsidebar h3, div.sphinxsidebar h4, div.sphinxsidebar p,
     div.sphinxsidebar h3 a {
-        color: #fff;
+        color: #000000;
     }
 
     div.sphinxsidebar a {
@@ -626,6 +622,12 @@ a:hover tt, a:hover code {
 
     .github {
         display: none;
+    }
+}
+@media screen and (min-width: 876px) {
+    div.sphinxsidebar {
+        position: fixed;
+        margin-left: 0;
     }
 }
 
